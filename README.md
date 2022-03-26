@@ -4,6 +4,7 @@
 
 ```bash
 git clone https://github.com/terrapain/terrakg.git
+cd terrakg
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
