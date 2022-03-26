@@ -1,0 +1,61 @@
+@base <http://kg.terra.money/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<Luna> a <Coin>;
+  rdfs:label "Luna";
+  <denom> "luna";
+  <udenom> "uluna" .
+
+<Anchor> a <Protocol>;
+  <hasToken> <bLuna> .
+
+<Prism> a <Protocol>;
+  <hasToken> <cLuna> .
+
+<bLuna> a <Token>;
+  rdfs:label "bLuna";
+  <denom> "bluna";
+  <udenom> "ubluna";
+  <contractAddress> [
+    <chain> <Columbus-5> ;
+    <address> "terra1kc87mu460fwkqte29rquh4hc20m54fxwtsx7gp" ] ;
+  <contractAddress> [
+    <chain> <Bombay-12> ;
+    <address> "TODO" ] .
+
+<cLuna> a <Token>;
+  rdfs:label "cLuna";
+  <denom> "cluna";
+  <udenom> "ucluna";
+  <contractAddress> [
+    <chain> <Columbus-5> ;
+    <address> "terra13zaagrrrxj47qjwczsczujlvnnntde7fdt0mau" ] .
+
+<Luna> <swap> [
+  a <SwapOpportunity>;
+  <target> <bLuna>;
+  <exchange> <Astroport>;
+  <pairAddress> "terra1j66jatn3k50hjtg2xemnjm8s7y8dws9xqa5y8w";
+  <chain> <Columbus-5> ] ;
+  <swap> [
+  a <SwapOpportunity>;
+  <target> <bLuna>;
+  <exchange> <TerraSwap>;
+  <pairAddress> "terra1jxazgm67et0ce260kvrpfv50acuushpjsz2y0p";
+  <chain> <Columbus-5> ] ;
+  <swap> [
+  a <SwapOpportunity>;
+  <target> <cLuna>;
+  <exchange> <TerraSwap>;
+  <pairAddress> "terra1ejyqwcemr5kda5pxwz27t2ja784j3d0nj0v6lh";
+  <chain> <Columbus-5> ] .
+
+<Astroport> a <DEX> .
+<TerraSwap> a <DEX> .
+
+<Columbus-5> a <Chain>;
+  <stringID> "columbus-5" .
+
+<Bombay-12> a <Chain>;
+  <stringID> "bombay-12" .
